@@ -26,8 +26,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
+          git config --global user.name 't3q-platform-service'
+          git config --global user.email 't3qplatformservice@gmail.com'
           git add .icona/icons.json
           git commit -m "Automatically updated icons in icons.json"
           git push
