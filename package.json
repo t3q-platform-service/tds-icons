@@ -1,0 +1,15 @@
+{
+  "name": "tds-icona",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t3q-platform-service/tds-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/t3q-platform-service/tds-icons/issues"
+  }
+}
