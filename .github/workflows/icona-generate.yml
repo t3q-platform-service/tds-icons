@@ -1,0 +1,44 @@
+# generate svg github action
+on:
+  push:
+    branches:
+      - 'icona-update-**' # only run workflow when icona-update-* branch is updated
+    paths:
+      - '.icona/icons.json' # only run workflow when icons.json is updated
+
+name: Generate Asset files from icons.json
+
+jobs:
+  deploy:
+    name: Generate Asset files from icons.json
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Packages
+        run: |
+          yarn install
+
+      - name: Git Config
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Action"
+
+      - name: Create Changeset File
+        run: |
+          yarn generate:changeset
+
+      - name: Version Patch Bump
+        run: |
+          yarn cs-version
+
+      - name: Generate Stuffs
+        run: |
+          yarn generate:icona
+          git add .
+          git commit -m "[Icona] Generate Files"
+          git push
