@@ -3,6 +3,7 @@ const filePath = './.icona/icons.json';
 
 // icons.json 파일을 로드
 const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+console.log('🚀 ~ data:', data);
 
 // 아이콘 이름 변경 함수
 const updateIconNames = (data) => {
@@ -19,6 +20,7 @@ const updateIconNames = (data) => {
 
 // 아이콘 이름 업데이트
 const updatedIcons = updateIconNames(data);
+console.log('🚀 ~ updatedIcons:', updatedIcons);
 
 // 변경된 데이터를 다시 파일에 쓰기
 fs.writeFileSync(filePath, JSON.stringify(updatedIcons, null, 2), 'utf8');
