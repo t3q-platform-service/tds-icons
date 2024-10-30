@@ -1,9 +1,8 @@
 {
-  "name": "@seed-design/icon-monorepo",
+  "name": "tps-icons-monorepo",
   "private": true,
   "version": "0.0.0-thisisnotpublished",
-  "repository": "https://github.com/daangn/seed-icon.git",
-  "author": "junghyeonsu <jung660317@naver.com>",
+  "repository": "https://github.com/t3q-platform-service/tds-icons.git",
   "license": "MIT",
   "packageManager": "yarn@4.3.1",
   "type": "module",
