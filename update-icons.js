@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 const filePath = './.icona/icons.json';
 
 // icons.json 파일을 로드
@@ -24,4 +24,3 @@ const updatedIcons = updateIconNames(data);
 fs.writeFileSync(filePath, JSON.stringify(updatedIcons, null, 2), 'utf8');
 
 console.log('icons.json has been updated!');
-
