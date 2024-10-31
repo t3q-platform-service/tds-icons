@@ -1,7 +1,6 @@
 {
   "name": "tps-icons-monorepo",
-  "private": true,
-  "version": "0.0.0-thisisnotpublished",
+  "version": "0.0.0",
   "repository": "https://github.com/t3q-platform-service/tds-icons.git",
   "license": "MIT",
   "packageManager": "yarn@4.3.1",
