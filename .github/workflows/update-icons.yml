@@ -1,0 +1,37 @@
+name: Update Icons on PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  update-icons:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref }}  # PR에서 생성된 브랜치를 명시적으로 체크아웃
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Update icons.json
+        run: |
+          node update-icons.js
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 't3q-platform-service'
+          git config --global user.email 't3qplatformservice@gmail.com'
+          git add .icona/icons.json
+          git commit -m "Automatically updated icons in icons.json" || echo "No changes to commit"
+          git push origin ${{ github.head_ref }}
+        continue-on-error: true

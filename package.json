@@ -1,0 +1,32 @@
+{
+  "name": "tps-icons-monorepo",
+  "version": "0.0.0",
+  "repository": "https://github.com/t3q-platform-service/tds-icons.git",
+  "license": "MIT",
+  "packageManager": "yarn@4.3.1",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "assets"
+  ],
+  "scripts": {
+    "generate:icona": "node --no-warnings=ExperimentalWarning --loader ts-node/esm icona.ts",
+    "generate:changeset": "node --no-warnings=ExperimentalWarning --loader ts-node/esm scripts/changeset.ts",
+    "release": "yarn changeset publish",
+    "cs-version": "changeset version && yarn install --no-immutable"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@icona/generator": "^0.7.2",
+    "@svgr/plugin-jsx": "^8.0.1",
+    "@svgr/plugin-prettier": "^8.0.1",
+    "@svgr/plugin-svgo": "^8.0.1",
+    "@types/findup-sync": "^4.0.5",
+    "@types/node": "^20.14.9",
+    "findup-sync": "^5.0.0",
+    "svgo": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.1.3"
+  }
+}
