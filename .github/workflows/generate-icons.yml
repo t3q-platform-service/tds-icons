@@ -1,11 +1,12 @@
-name: Update Icons on PR
+name: Generate Icons Index
 
 on:
-  pull_request:
-    types: [opened]
+  push:
+    paths:
+      - "packages/react/src/**" # 아이콘 디렉토리 내 파일 변경 감지
 
 jobs:
-  update-icons:
+  generate-icons:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,13 +26,13 @@ jobs:
 
       - name: Update icons.json
         run: |
-          node update-icons.js
+          node generate-icons.js
 
       - name: Commit changes
         run: |
           git config --global user.name 't3q-platform-service'
           git config --global user.email 't3qplatformservice@gmail.com'
-          git add .icona/icons.json
-          git commit -m "Automatically updated icons in icons.json" || echo "No changes to commit"
+          git add packages/react/src/index.ts
+          git commit -m "regenerate icons index using generate-icons.js" || echo "No changes to commit"
           git push origin ${{ github.head_ref }}
         continue-on-error: true
