@@ -10,7 +10,7 @@
     "assets"
   ],
   "scripts": {
-    "generate:icona": "node --no-warnings=ExperimentalWarning --loader ts-node/esm icona.ts",
+    "generate:icona": "node --no-warnings=ExperimentalWarning --loader ts-node/esm icona.ts && node generate-icons.js",
     "generate:changeset": "node --no-warnings=ExperimentalWarning --loader ts-node/esm scripts/changeset.ts",
     "release": "yarn changeset publish",
     "cs-version": "changeset version && yarn install --no-immutable"
