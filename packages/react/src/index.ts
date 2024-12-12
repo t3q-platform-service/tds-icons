@@ -275,3 +275,5 @@ export const Icons = {
   zoom_in: ZoomIn,
   zoom_out: ZoomOut,
 };
+
+export type IconKeyType = keyof typeof Icons;

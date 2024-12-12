@@ -37,6 +37,8 @@ ${exports.join('\n')}
 export const Icons = {
 ${icons.join('\n')}
 };
+
+export type IconKeyType = keyof typeof Icons;
 `;
 
   // 결과 파일 생성
