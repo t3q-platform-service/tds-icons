@@ -26,3 +26,14 @@
     path: 'assets/png',
   };
   ```
+
+### Icona 
+
+- 피그마 플러그인 Icona 설치
+- Icon이 있는 피그마 페이지에서 Icona 실행
+- Icona > Setting에 아래 값 입력 
+  | Key | Value |
+  | ------ | ----------- |
+  | Github Repository URL   | https://github.com/t3q-platform-service/tds-icons |
+  | Github API Key | 담당자에게 문의 |
+- Icona > Setting에서 Deploy 실행
